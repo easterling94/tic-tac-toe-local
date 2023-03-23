@@ -9,7 +9,13 @@ $onHoverShadow: #6363bd;
   }
 }
 .announce {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   text-align: center;
+  color: white;
+  font-size: 2em;
 }
 .gameWrapper {
   margin: 0px auto;

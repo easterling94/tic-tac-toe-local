@@ -116,11 +116,13 @@ export const App = () => {
     (state) => state.game.isCurrentPlayerFirst
   );
   return (
-    <div>
+    <div className={styles.appWrapper}>
       {ifCurrentUserWin ? (
-        <h1 className={styles.announce}>
-          {currentPlayer ? 'Первый игрок выиграл!' : 'Второй игрок выиграл!'}
-        </h1>
+        <div className={styles.announce}>
+          {currentPlayer
+            ? 'Поздравляем первого игрока (Х) с победой!'
+            : 'Поздравляем второго игрока (О) с победой!'}
+        </div>
       ) : (
         <div className={styles.gameWrapper}>
           {board.map((el, i) => {
