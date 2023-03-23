@@ -1,0 +1,123 @@
+$onHover: #7d7dee;
+$onHoverShadow: #6363bd;
+
+@mixin hover() {
+  &:hover {
+    cursor: pointer;
+    border-color: $onHover;
+    box-shadow: 0px 0px 2px 2px $onHoverShadow;
+  }
+}
+.announce {
+  text-align: center;
+}
+.gameWrapper {
+  margin: 0px auto;
+  width: 1018px;
+  background-color: #cacae4;
+  border: 2px solid #cacae4;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 2px;
+}
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  position: relative;
+  @include hover();
+}
+.contentX {
+  position: absolute;
+}
+.positionO {
+  position: absolute;
+}
+
+// Board X's and O's styles
+
+.cellContent {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+}
+// X's on the board
+.line {
+  width: 0px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: black;
+  position: absolute;
+}
+
+.firstLine {
+  transform: rotate(45deg);
+  transform-origin: center left;
+  transition: width 0.5s ease-in-out 0s;
+  top: 10px;
+  left: 14px;
+}
+.firstLineWrite {
+  width: 100px;
+}
+.secondLine {
+  transform: rotate(-45deg);
+  transform-origin: center left;
+  transition: width 0.5s ease-in-out 0.5s;
+  bottom: 10px;
+  left: 14px;
+}
+.secondLineWrite {
+  width: 100px;
+}
+
+// O's on the board
+
+.circle {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 80px;
+  height: 80px;
+  background-color: black;
+  border-radius: 50%;
+}
+.circleLeft {
+  position: absolute;
+  height: 100px;
+  bottom: 0px;
+  left: 0px;
+  width: 50px;
+  background-color: rgb(255, 255, 255);
+  animation: rotationLeft 0.25s linear 0.25s forwards;
+}
+
+.circleRight {
+  position: absolute;
+  top: 0px;
+  left: 50px;
+  width: 50px;
+  height: 100px;
+  background-color: rgb(255, 255, 255);
+  animation: rotationRight 0.25s linear 0.5s forwards;
+}
+.circleInner {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 60px;
+  height: 60px;  
+  background-color: white;
+  border-radius: 50%;
+}
+
+@keyframes rotationLeft {
+  0% {height: 100px}
+  100% {height: 0px}
+}
+
+@keyframes rotationRight {
+  0% {height: 100px}
+  100% {height: 0px}
+}
