@@ -1,5 +1,6 @@
 {
-  "name": "tic-tac-toe-singleplay",
+  "homepage": "https://easterling94.github.io/tic-tac-toe-local",
+  "name": "tic-tac-toe-local",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
